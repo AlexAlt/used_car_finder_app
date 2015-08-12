@@ -1,5 +1,5 @@
 <h3>Add a vehicle to your dealership</h3>
- <form action='/' method='post'>
+ <form action='/vehicle_list/<%= @dealership.id() %>' method='post'>
    <div class='form-group'>
      <label for='vehicle_make'>Make</label>
      <input id='vehicle_make' name='vehicle_make' type='text' class='form-control'>

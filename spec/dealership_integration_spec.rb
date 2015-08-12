@@ -22,11 +22,11 @@ end
 
 describe('the path to add a new vehicle to dealership', {:type => :feature}) do
   it('adds the information of a new vehicle to the dealership page') do
-    visit('/vehicle_list')
+    visit('/new')
     fill_in('vehicle_make', :with => "Honda")
     fill_in('vehicle_model', :with => "CRV")
-    fill_in('vehicle_year', :with => 1999)
+    fill_in('vehicle_year', :with => "1999")
     click_button('Add')
-    expect(page).to have_content("Honda", "CRV", "1999")
+    expect(page).to have_content("Honda")
   end
 end

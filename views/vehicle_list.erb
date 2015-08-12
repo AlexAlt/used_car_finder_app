@@ -1,24 +1,9 @@
-<h1> List of <%= @dealership %>'s vehicles:</h1>
+<h1> List of <%= @dealership_name %>'s vehicles:</h1>
 
 <ul>
-<% @dealership_cars.each() do |car| %>
-  <li><%= car %></li>
+<% @dealership_cars.cars().each() do |car| %>
+  <li><%= car.make() %></li>
 <% end %>
 </ul>
-<!--
-<h3>Add a vehicle to your dealership</h3>
- <form action='/updated_list' method='post'>
-   <div class='form-group'>
-     <label for='vehicle_make'>Make</label>
-     <input id='vehicle_make' name='vehicle_make' type='text' class='form-control'>
-   </div>
-   <div class='form-group'>
-     <label for='vehicle_model'>Model</label>
-     <input id='vehicle_model' name='vehicle_model' type='text' class='form-control'>
-   </div>
-   <div class='form-group'>
-     <label for='vehicle_year'>Year</label>
-     <input id='vehicle_year' name='vehicle_year' type='text' class='form-control'>
-   </div>
-   <button class='btn-success' type='submit'>Add</button>
- </form> -->
+
+<a href="/vehicle_list/<%= @dealership_cars.id() %>/new">Add a Vehicle to this Dealership</a>
