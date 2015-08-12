@@ -11,3 +11,11 @@ describe('the dealership homepage path', {:type => :feature}) do
     expect(page).to have_content("Used Cars Dot Com")
   end
 end
+
+describe('the path to list of dealership vehicles', {:type => :feature}) do
+  it('lists the vehicles owned by that dealership') do
+    visit('/dealership_list')
+    click_link('Used Cars Dot Com')
+    expect(page).to have_content('Used Cars Dot Com')
+  end
+end

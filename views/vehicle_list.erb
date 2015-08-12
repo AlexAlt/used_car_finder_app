@@ -1,0 +1,7 @@
+<h1> List of <%= @dealership %>'s vehicles:</h1>
+
+<ul>
+<% @dealership_cars.each() do |car| %>
+  <li><%= car %></li>
+<% end %>
+</ul>

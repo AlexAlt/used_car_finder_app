@@ -22,3 +22,10 @@ get('/dealership_list') do
   @dealerships = Dealership.all()
   erb(:dealership_list)
 end
+
+get('/vehicle_list/:id') do
+  dealership_cars = Dealership.find(params.fetch('id').to_i())
+  @dealership = dealership_cars.name()
+  @dealership_cars = dealership_cars.cars()
+  erb(:vehicle_list)
+end

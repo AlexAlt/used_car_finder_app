@@ -3,6 +3,8 @@
 
 <ul>
   <% @dealerships.each() do |dealership|%>
-    <li><%= dealership.name() %></li>
+    <li><a href='/vehicle_list/<%= dealership.id() %>'><%= dealership.name() %></li>
   <% end %>
 </ul>
+
+<a href='/'>Back</a>
