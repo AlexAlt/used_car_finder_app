@@ -1,4 +1,4 @@
-<h1> List of <%= @dealership_name %>'s vehicles:</h1>
+<h1> List of <%= @dealership.name() %>'s vehicles:</h1>
 
 <ul>
 <% @dealership_cars.each() do |car| %>
@@ -7,4 +7,6 @@
 <% end %>
 </ul>
 
-<a href="/vehicle_list/<%= @dealership.id() %>/new">Add a Vehicle to this Dealership</a>
+<a href="/vehicle_list/<%= @dealership.id() %>/new">Add a Vehicle to this Dealership</a><br>
+<a href="/dealership_list">Back to Dealerships</a><br>
+<a href="/">Go home</a>
