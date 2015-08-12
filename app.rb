@@ -36,12 +36,13 @@ get('/vehicle_list/:id/new') do
 end
 
 post('/vehicle_list/:id') do
-  @dealership_cars = Dealership.find(params.fetch('id').to_i())
+  @dealership = Dealership.find(params.fetch('id').to_i())
+  @dealership_cars = @dealership.cars()
   vehicle_make = params.fetch('vehicle_make')
   vehicle_model = params.fetch('vehicle_model')
   vehicle_year = params.fetch('vehicle_year')
   new_vehicle = Vehicle.new(vehicle_make, vehicle_model, vehicle_year)
   new_vehicle.save()
-  @dealership_cars.add_vehicle(new_vehicle)
+  @dealership.add_vehicle(new_vehicle)
   erb(:vehicle_list)
 end
