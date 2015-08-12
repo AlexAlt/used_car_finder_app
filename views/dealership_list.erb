@@ -2,7 +2,7 @@
 
 
 <ul>
-  <% @dealerships.each() do |dealership|%>
+  <% @dealerships.cars().each() do |dealership|%>
     <li><a href='/vehicle_list/<%= dealership.id() %>'><%= dealership.name() %></li>
   <% end %>
 </ul>
